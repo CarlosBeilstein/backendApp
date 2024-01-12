@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://duckduckgo.com/?q=Toad+super+mario+background&t=bravened&iax=images&ia=images&iai=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp3960841.png">
+    <title>Your Django App</title>
+</head>
+
+<body>
+    <h1>FavStocks List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Company Name</th>
+                <th>Price</th>
+                <th>Added</th>
+                <th>Change</th>
+                <!-- <th>Change in Percentage</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in data %}
+            {% if entry.added %}
+            <tr>
+                <td>{{ entry.id }}</td>
+                <td>{{ entry.name }}</td>
+                <td>{{ entry.companyName }}</td>
+                <td>{{ entry.price }}</td>
+                <td>{{ entry.added }}</td>
+                <td>{{ entry.change }}</td>
+                <!-- <td>{{ entry.changePer }}</td>-->
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- <button id="buttonAdd">Add Item</button> -->
+    <script>
+
+        /*
+        document.getElementById('deleteButton').addEventListener('click', function () {
+            fetch('/delete_items/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            window.location.href = '/';
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation: ', error);
+        });
+        */
+
+    </script>
+</body>
+
+</html>
